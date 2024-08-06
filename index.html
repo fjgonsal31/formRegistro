@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Formulario</title>
+</head>
+
+<body>
+    <section class="contacto">
+        <form action="" id="form" novalidate>
+            <fieldset>
+                <legend>Formulario de Registro</legend>
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre">
+                <div class="error" id="errorNombre"></div>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email">
+                <div class="error" id="errorEmail"></div>
+                <label for="fecha">Fecha de nacimiento</label>
+                <input type="date" id="fecha" name="fecha" min="1900-01-01">
+                <div class="error" id="errorFecha"></div>
+                <label for="telefono">Teléfono</label>
+                <input type="tel" id="telefono" name="telefono">
+                <div class="error" id="errorTelefono"></div>
+                <label for="pass">Contraseña</label>
+                <input type="password" id="pass" name="pass">
+                <div class="error" id="errorPass"></div>
+                <label for="pass2">Confirmar Contraseña</label>
+                <input type="password" id="pass2" name="pass2">
+                <div class="error" id="errorPass2"></div>
+                <button type="submit" id="enviar" name="enviar">Enviar</button>
+            </fieldset>
+        </form>
+    </section>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+/* aplicadas con js en tiepo real*/
+.danger {
+    outline: none;
+    border-color: red;
+}
+
+.success {
+    outline: none;
+    border-color: green;
+}
+
+/* form */
+legend {
+    text-align: center;
+    font-size: x-large;
+    font-weight: bolder;
+    margin-bottom: 1rem;
+}
+
+.contacto {
+    margin: 5rem auto;
+    padding: 1rem;
+    width: 20rem;
+    border-radius: 0.5rem;
+    background-color: rgb(187, 181, 181);
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+    border: 0;
+}
+
+input {
+    outline: none;
+    margin: 0 0 0.5rem 0;
+    height: 1.5rem;
+    border: 1px solid gray;
+}
+
+.error {
+    color: red;
+    padding: 0 0 0.5rem 0;
+}
+
+button {
+    margin-top: 1rem;
+    width: 5rem;
+    height: 2rem;
+    align-self: center;
+    border: 0;
+    border-radius: 0.5rem;
+    background-color: rgb(4, 185, 4);
+    color: white;
+    cursor: pointer;
+}
+
+input[type="date"] {
+    height: 1.75rem;
+}
