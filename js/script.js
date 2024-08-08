@@ -2,9 +2,12 @@ let form = document.getElementById("form");
 let nombre = document.getElementById("nombre");
 let email = document.getElementById("email");
 let fecha = document.getElementById("fecha");
-const today = new Date().toISOString().split('T')[0];
 
+// asignar como maximo la fecha actual al input date
+const today = new Date().toISOString().split('T')[0];
 fecha.setAttribute("max", today);
+
+// deshabilitar teclado en fecha
 fecha.addEventListener('keydown', function (event) {
     event.preventDefault();
 });
@@ -12,6 +15,7 @@ fecha.addEventListener('keydown', function (event) {
 let telefono = document.getElementById("telefono");
 let pass = document.getElementById("pass");
 let pass2 = document.getElementById("pass2");
+let check = document.getElementById("check");
 let error = document.getElementById("errorPass");
 let error2 = document.getElementById("errorPass2");
 
@@ -121,6 +125,19 @@ function compararPass() {
     }
 }
 
+// comprobar check
+function valCheck() {
+    let error = document.getElementById("errorCheck");
+
+    if (!check.checked) {
+        error.textContent = "Lea y acepte la Política de Privacidad.";
+        return false;
+    } else {
+        error.textContent = "";
+        return true;
+    }
+}
+
 // evento click en 'Enviar'
 form.addEventListener("submit", function (event) {
     // console.log(event.target);
@@ -131,8 +148,9 @@ form.addEventListener("submit", function (event) {
     let t = valTelefono();
     let p = valPass();
     let p2 = valPass2();
+    let ch = valCheck();
 
-    if (n && e && f && t && p && p2) {
+    if (n && e && f && t && p && p2 && ch) {
         this.reset();
         nombre.classList.remove("success");
         email.classList.remove("success");
@@ -140,6 +158,7 @@ form.addEventListener("submit", function (event) {
         telefono.classList.remove("success");
         pass.classList.remove("success");
         pass2.classList.remove("success");
+        check.setAttribute("disabled", "true");
     } else {
         alert("error validación");
     }
@@ -152,3 +171,24 @@ fecha.addEventListener("input", valFecha);
 telefono.addEventListener("input", valTelefono);
 pass.addEventListener("input", valPass);
 pass2.addEventListener("input", valPass2);
+check.addEventListener("input", valCheck);
+
+// modal
+let modal = document.getElementById("modal");
+let btnPol = document.getElementById("btnPol");
+let btnClose = document.getElementById("close");
+
+btnPol.addEventListener('click', function () {
+    modal.style.display = "block";
+    check.removeAttribute("disabled");
+});
+
+btnClose.addEventListener('click', function () {
+    modal.style.display = "none";
+});
+
+document.addEventListener('click', function (event) {
+    if (event.target.classList.contains("sectModal")) {
+        modal.style.display = "none";
+    }
+});
